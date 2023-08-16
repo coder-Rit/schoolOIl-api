@@ -10,7 +10,7 @@ const path = require("path");
 
 
 if (process.env.NODE_ENV !== "PRODUCTION") {
-    require("dotenv").config({ path: "config/config.env" });
+    require("dotenv").config({ path: "./config/config.env" });
   }
 
 app.use(cors())
