@@ -19,7 +19,9 @@ Cloudinary.config({
     api_secret:process.env.CLOUDINARY_API_SECRET
 })
 
-  
+  if (process.env.NODE_ENV !== "PRODUCTION") {
+    require("dotenv").config({ path: "./config/config.env" });
+  }
 
 // server code
 const server = http.createServer(app);
