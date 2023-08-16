@@ -49,12 +49,12 @@ app.use("/api/v1",timeTableRouter)
 app.use("/api/v1",messageRouter)
  
 
-app.use(express.static(path.join(__dirname, "../frontend/build")));
+//app.use(express.static(path.join(__dirname, "../frontend/build")));
 
-app.get("*", (err,req, res,next) => {
-  console.log(err);
-  res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
-});
+//app.get("*", (err,req, res,next) => {
+//  console.log(err);
+//  res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
+//});
 
  
  
