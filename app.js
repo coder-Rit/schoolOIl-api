@@ -13,16 +13,16 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
     require("dotenv").config({ path: "./config/config.env" });
   }
 
-app.use(cors())
-app.use(express.json())
+//connection to the data base 
+connectTODatabase()
+
 app.use(cookieParser())
-app.use(bodyParser.urlencoded({extended:true}))
+app.use(bodyParser.urlencoded({extended:false}))
+app.use(bodyParser.json())
 app.use(fileUpload())
 
  
 
-//connection to the data base 
-connectTODatabase()
 
 
 const facultyRouter = require('./router/facultyRouter')
@@ -36,13 +36,9 @@ const timeTableRouter = require('./router/timeTableRouter')
 const messageRouter = require('./router/messageRouter')
  
 
-app.get("/", (err,req, res,next) => {
-  
-  res.status(200).json({
-    message:'bad request'
-  })
-  
-});
+app.use(cors())
+
+
 
 
 app.use("/api/v1", facultyRouter)
@@ -57,7 +53,13 @@ app.use("/api/v1",messageRouter)
  
 
 //app.use(express.static(path.join(__dirname, "../frontend/build")));
-
+app.get("/", (err,req, res,next) => {
+  
+  res.status(200).json({
+    message:'bad request'
+  })
+  
+});
 
 
  
