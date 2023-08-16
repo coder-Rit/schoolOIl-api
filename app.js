@@ -36,6 +36,13 @@ const timeTableRouter = require('./router/timeTableRouter')
 const messageRouter = require('./router/messageRouter')
  
 
+app.get("/", (err,req, res,next) => {
+  
+  res.status(200).json({
+    message:'bad request'
+  })
+  
+});
 
 
 app.use("/api/v1", facultyRouter)
@@ -51,13 +58,7 @@ app.use("/api/v1",messageRouter)
 
 //app.use(express.static(path.join(__dirname, "../frontend/build")));
 
-app.get("*", (err,req, res,next) => {
-  
-  res.status(200).json({
-    message:'bad request'
-  })
-  
-});
+
 
  
  
