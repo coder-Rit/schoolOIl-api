@@ -9,9 +9,9 @@ const fileUpload = require("express-fileupload")
 const path = require("path");
 
 
-if (process.env.NODE_ENV !== "PRODUCTION") {
+ 
     require("dotenv").config({ path: "./config/config.env" });
-  }
+ 
 
 //connection to the data base 
 connectTODatabase()
