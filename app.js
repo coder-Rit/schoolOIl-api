@@ -8,9 +8,7 @@ const app = express()
 const fileUpload = require("express-fileupload")
 const path = require("path");
 
-
  
-    require("dotenv").config({ path: "./config/config.env" });
  
 
 //connection to the data base 
