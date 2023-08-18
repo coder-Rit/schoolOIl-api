@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken')
 const catchAsyncErorr = require("./catchAsyncErorr") 
 
 exports.isAuthenticated = catchAsyncErorr(async(req,res,next)=>{
-    const token = req.token 
+    const token = req.params.token 
     if (!token) {
         next(new ErrorHandler("Please login to access this source",400))
     }
