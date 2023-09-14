@@ -5,7 +5,7 @@ const catchAsyncErorr = require("./catchAsyncErorr")
 
 exports.isAuthenticated = catchAsyncErorr(async(req,res,next)=>{
 
-     
+     console.log(req.body)
     const token = req.body.token
     if (!token) {
         next(new ErrorHandler("Please login to access this source",400))
