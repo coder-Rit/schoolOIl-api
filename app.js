@@ -37,7 +37,7 @@ const messageRouter = require('./router/messageRouter')
  
 
 app.use(cors({
- origin:`http://localhost:3000`
+ origin:[`http://localhost:3000`,`http://localhost:3000/user/account`,`http://localhost:3000/user/auth`]
 }))
 
 
