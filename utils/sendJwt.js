@@ -9,6 +9,7 @@ module.exports = (user, res, msg, statusCode,req) => {
       Date.now() + process.env.COOKIE_EXPIER * 24 * 60 * 60 * 1000
     ),
     httpOnly: true,
+    sameSite: 'none'
   };
 
   
