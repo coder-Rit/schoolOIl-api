@@ -5,7 +5,7 @@ const { addFacultyID, getFacultyID } = require('../controller/facultyIDControlle
 const Router = express.Router()
 
 Router.route("/addfacultyID").post(addFacultyID)
-Router.route("/getFacultyID").get(getFacultyID)
+Router.route("/getFacultyID").post(getFacultyID)
  
 
 module.exports =Router
