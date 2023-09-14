@@ -5,14 +5,15 @@ const catchAsyncErorr = require("./catchAsyncErorr")
 
 exports.isAuthenticated = catchAsyncErorr(async(req,res,next)=>{
 
-     console.log(req.body)
     const token = req.body.token
     if (!token) {
         next(new ErrorHandler("Please login to access this source",400))
     }
     
     const decoded =  jwt.verify(token,process.env.JWT_SECREATE)
-  
+     let a = req.body 
+      delete a.token
+     req.body = a
     req.user =  await userModel.findById(decoded.id)
      next()
     
