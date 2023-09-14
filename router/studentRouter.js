@@ -7,8 +7,8 @@ const Router = express.Router()
 Router.route("/updateStudentEmail").post(isAuthenticated,updateStudentEmail) 
 Router.route("/updateNcreate").post(isAuthenticated,authorizedRole("teacher"),createAND_update) 
  Router.route("/addstudents").post(isAuthenticated,authorizedRole("teacher"),createAccs) 
-Router.route("/getstudents/:course/:clgShortName/:department/:year/:div").get(isAuthenticated,authorizedRole("HOD","teacher"),getAllStudent)
-Router.route("/user/detail/:enNumber").get(isAuthenticated,getStudentDetail)
+Router.route("/getstudents/:course/:clgShortName/:department/:year/:div").post(isAuthenticated,authorizedRole("HOD","teacher"),getAllStudent)
+Router.route("/user/detail/:enNumber").post(isAuthenticated,getStudentDetail)
 Router.route("/user/student/update/role/:id/:role").put(isAuthenticated,findStudentByIdAndUpdateRole)
 
 
