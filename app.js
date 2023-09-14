@@ -14,7 +14,7 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
     require("dotenv").config({ path: "./config/config.env" });
   }
 //connection to the data base 
-connectTODatabase()
+connectTODatabase() 
 
 app.use(cookieParser())
 app.use(bodyParser.urlencoded({extended:false}))
