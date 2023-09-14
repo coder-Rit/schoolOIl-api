@@ -36,7 +36,7 @@ const timeTableRouter = require('./router/timeTableRouter')
 const messageRouter = require('./router/messageRouter')
  
 
-app.use(cors())
+app.use(cors({ origin: 'https://delicate-kataifi-8ae037.netlify.app' }))
 
 
 
