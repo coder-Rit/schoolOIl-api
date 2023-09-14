@@ -36,7 +36,9 @@ const timeTableRouter = require('./router/timeTableRouter')
 const messageRouter = require('./router/messageRouter')
  
 
-app.use(cors())
+app.use(cors({
+ origin:`https://schooloil-api.onrender.com/*`
+}))
 
 
 
