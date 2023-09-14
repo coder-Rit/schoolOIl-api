@@ -4,7 +4,7 @@ const { isAuthenticated, authorizedRole } = require('../middleware/auth')
 
 const Router = express.Router()
 
-Router.route("/timeTable/:id/:token").get(isAuthenticated,getTimetableByID) 
-Router.route("/timeTable/update/:token").post(isAuthenticated,authorizedRole("teacher"),updateTimeTable) 
+Router.route("/timeTable/:id").get(isAuthenticated,getTimetableByID) 
+Router.route("/timeTable/update").post(isAuthenticated,authorizedRole("teacher"),updateTimeTable) 
  
 module.exports =Router    
