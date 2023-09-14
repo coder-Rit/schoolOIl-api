@@ -37,7 +37,7 @@ const messageRouter = require('./router/messageRouter')
  
 
 app.use(cors({
- origin:`https://schooloil-api.onrender.com/*`
+ origin:`http://localhost:3000/*`
 }))
 
 
