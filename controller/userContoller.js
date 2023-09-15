@@ -147,7 +147,8 @@ exports.isExist = catchAsyncErorr(async (req, res, next) => {
  
   res.status(200).json({
     success: true,
-     username:user.username
+     username:user.username,
+     msg:'♻️ ♻️ ♻️  Server is reloaded ♻️ ♻️ ♻️'
   });
 });
 
