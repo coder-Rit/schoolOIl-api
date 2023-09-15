@@ -1,7 +1,6 @@
 const facultyModel = require("../model/facultyModel");
 const catchAsyncErorr = require("../middleware/catchAsyncErorr");
-const facultyIdModel = require("../model/facultyIdModel");
-const { findOneAndUpdate } = require("../model/facultyModel");
+ 
 const ErrorHandler = require("../utils/errorHandler");
 
 // creating and update a faculty account

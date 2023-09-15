@@ -8,7 +8,7 @@ module.exports = (user, res, msg, statusCode,req) => {
     maxAge:new Date(
       Date.now() + process.env.COOKIE_EXPIER * 24 * 60 * 60 * 1000
     ),
-    httpOnly: true
+    httpOnly: true,
   };
 
   

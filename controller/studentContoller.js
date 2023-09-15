@@ -50,7 +50,6 @@ exports.getStudnetByEN = catchAsyncErorr(async (req, res, next) => {
 
 // creating multiple accounts
 exports.createAccs = catchAsyncErorr(async (req, res, next) => {
-  console.log(req.body);
   let users = await studentModel.insertMany(req.body);
 
   res.status(201).json({ 

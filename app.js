@@ -14,7 +14,7 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
     require("dotenv").config({ path: "./config/config.env" });
   }
 //connection to the data base 
-connectTODatabase() 
+connectTODatabase()
 
 app.use(cookieParser())
 app.use(bodyParser.urlencoded({extended:false}))
@@ -50,18 +50,6 @@ app.use("/api/v1",registerClgRouter )
 app.use("/api/v1",divisionRouter)
 app.use("/api/v1",timeTableRouter)
 app.use("/api/v1",messageRouter)
- 
-
-//app.use(express.static(path.join(__dirname, "../frontend/build")));
-app.get("/", (err,req, res,next) => {
-  
-  res.status(200).json({
-    message:'bad request'
-  })
-  
-});
-
-
  
  
  app.use(error)

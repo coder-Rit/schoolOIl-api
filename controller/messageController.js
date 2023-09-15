@@ -28,7 +28,7 @@ exports.whatsapp_message = catchAsyncErorr((req, res, next) => {
       body: `Dear student hleoow  `,
       from: "whatsapp:+14155238886",
     })
-    .then((message) => console.log(message.sid))
+    .then((message) => console.log())
     .done();
 
   res.status(200).json({

@@ -7,7 +7,6 @@ exports.updateDivision = catchAsyncErorr(async (req, res, next) => {
    if (req.body._id===null ) {
       let a = req.body
       delete a._id
-      console.log(a);
      division = await divisionsModel.create(a);
     }else{
       division = await divisionsModel.findByIdAndUpdate(req.body._id,req.body)
@@ -22,7 +21,6 @@ exports.updateDivision = catchAsyncErorr(async (req, res, next) => {
 
 //get all divisions base on conditions
 exports.getDivisions = catchAsyncErorr(async (req, res, next) => {
-   console.log(req.params);
    const divisions = await divisionsModel.find({
     course: req.body.course,
     clgShortName: req.body.clgShortName, 
@@ -67,7 +65,6 @@ exports.updateDivisionById = catchAsyncErorr(async (req, res, next) => {
 // updating updateDivisionById
 exports.updateDivisionBydata = catchAsyncErorr(async (req, res, next) => {
 
-  console.log(req.body);
    const updatedDivision = await divisionsModel.findByIdAndUpdate(req.body.dataForFinding,req.body.dataForUpdate);
 
   if (!updatedDivision) {
@@ -116,7 +113,6 @@ exports.FindDivisionByIDAndUpdateEn = catchAsyncErorr(async (req, res, next) => 
 exports.deleteDivision = catchAsyncErorr(async (req, res, next) => {
    let division = await divisionsModel.findOneAndDelete(req.body.id)
 
-   console.log(division);
 
   res.status(201).json({
     status: true,

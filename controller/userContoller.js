@@ -37,7 +37,7 @@ exports.login = catchAsyncErorr(async (req, res, next) => {
     );
   } 
   const user = await userModel.findOne({ email }).select("+password"); 
-  console.log(user);
+  console.log("💖💖💖 user login successful 💖💖💖");
   if (!user) {
     return next(new ErrorHandler("User does not exist", 400));
   }
@@ -101,7 +101,6 @@ exports.updatePassword = catchAsyncErorr(async (req, res, next) => {
 // get user detail
 exports.getUserDetails = catchAsyncErorr(async (req, res, next) => {
   const user = await userModel.findById(req.user.id);
-  console.log(user);
    if (!user) {
     return next(new ErrorHandler("user not found", 404));
   }
@@ -143,7 +142,6 @@ exports.isExist = catchAsyncErorr(async (req, res, next) => {
     } 
    const user = await userModel.findOne({ email:req.params.email })
   if (!user) {
-    console.log(user);
     return next(new ErrorHandler("User does not exist", 404));
   } 
  
@@ -157,7 +155,6 @@ exports.isExist = catchAsyncErorr(async (req, res, next) => {
 // log in with out pass
 // loged in
 exports.login_withoutPass = catchAsyncErorr(async (req, res, next) => {
-  console.log(req.params);
   const { email ,sendedOTP,recivedOTP} = req.params;
   const user = await userModel.findOne({ email }).select("+password");  
  if (sendedOTP!=recivedOTP) {

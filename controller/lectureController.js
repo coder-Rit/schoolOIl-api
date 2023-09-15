@@ -6,6 +6,8 @@ const ErrorHandler = require("../utils/errorHandler");
 exports.genrateLecture = catchAsyncErorr(async (req, res, next) => {
   const lecture = await lectuerModel.create(req.body);
 
+  console.log("🤞🤞🤞 Lecutre create 🤞🤞🤞")
+
   res.status(201).json({
     status: true,
     lecture,
@@ -14,7 +16,6 @@ exports.genrateLecture = catchAsyncErorr(async (req, res, next) => {
 
 // get genrated lectures
 exports.getAll_lectures = catchAsyncErorr(async (req, res, next) => {
- console.log(req.params);
   const lectures = await lectuerModel.find({
     divisionID: req.params.id,
     timeStamp: { $gt: req.params.from ,$lt:req.params.to},
@@ -60,7 +61,6 @@ exports.findLectureByIDAndUpdate = catchAsyncErorr(async (req, res, next) => {
   lecture.subject=req.body.subject
   lecture.duplicated=req.body.duplicated
  
-  console.log(lecture);
 
 
 

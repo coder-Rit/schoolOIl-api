@@ -1,6 +1,7 @@
 const app = require('./app')
  const http = require('http');
 const Cloudinary = require('cloudinary')
+const schedule = require('node-schedule');
 
 // Handling Uncaught Exception
 process.on("uncaughtException", (err) => {
@@ -10,7 +11,11 @@ process.on("uncaughtException", (err) => {
   });
 
 // Config
-  
+if (process.env.NODE_ENV !== "PRODUCTION") {
+  require("dotenv").config({ path: "config/config.env" });
+}
+
+
 
 // Cloudinary config
 Cloudinary.config({
@@ -26,8 +31,13 @@ Cloudinary.config({
 // server code
 const server = http.createServer(app);
 server.listen(process.env.PORT,()=>{
-    console.log(`server is runing at ${process.env.PORT}`);
+    console.log(`🚀🚀🚀 server is runing at ${process.env.PORT} 🚀🚀🚀`);
 })
+
+const job = schedule.scheduleJob(' */13 * * * *', function(){
+  console.log('♻️ ♻️ ♻️  Server is reloaded ♻️ ♻️ ♻️');
+});
+
 
 
 // Unhandled Promise Rejection
